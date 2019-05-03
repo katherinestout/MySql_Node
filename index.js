@@ -31,9 +31,7 @@ app.get('/flavors/add', (req, res) => {
     const {type, price} = req.query;
 
 const sql = `INSERT INTO flavors(type, price) VALUES('${type}', ${price})`;
-
-
-
+//http://localhost:5000/flavors/add?type=pea&price=1
     db.query(sql, (err, result) => {
         if(err) throw err;
         res.send(result);
